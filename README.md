@@ -7,7 +7,7 @@ Create a huggingface account and add you huggingfacehub api key to the .env <br>
 Download and install pytesseract on your system from here : https://github.com/UB-Mannheim/tesseract/wiki
 
 ```
-pip install langchain streamlit huggingfacehub pytesseract pypdfium2 pinecone-client sentence_transformer 
+pip install langchain streamlit huggingfacehub pytesseract pypdfium2 pinecone-client sentence_transformer python-dotenv
 ```
 
 # Screenshots
