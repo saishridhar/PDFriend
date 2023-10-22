@@ -2,7 +2,7 @@
 A pdf chatbot
 
 # Requirements
-Create an account on Pinecone and get your api key and environment from there. Add it to .env
+Create an account on Pinecone and get your api key and environment from there. Add it to .env <br>
 Need to download and install pytesseract on your system from here : https://github.com/UB-Mannheim/tesseract/wiki
 
 ```
