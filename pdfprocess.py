@@ -3,6 +3,10 @@ from pytesseract import image_to_string
 from io import BytesIO
 from PIL import Image
 import multiprocessing
+import os
+import tempfile
+
+
 
 def pdf2img(file_path,scale=300/72):
    pdf_file = pdfium.PdfDocument(file_path)
@@ -33,12 +37,15 @@ def img2str(list_dict_final_images):
     
     return '\n'.join(image_content)
 
-def main():
-    path= r'c:\Users\saish\Downloads\Resume_v3.pdf'
-    f = pdf2img(path)
-    print(img2str(f))
-
-if __name__ == '__main__':
-    multiprocessing.freeze_support()
-    main()
+def pdf2str(docs):
+    raw_text = ''
     
+    for i in docs:
+        if i is not None:
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
+                temp_file.write(i.read())
+            uploaded_file_path = temp_file.name
+        x = pdf2img(uploaded_file_path)
+        raw_text += '\n' + img2str(x)
+    return raw_text
+
